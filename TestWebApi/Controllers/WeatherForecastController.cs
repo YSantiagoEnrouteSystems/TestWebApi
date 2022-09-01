@@ -48,6 +48,13 @@ namespace TestWebApi.Controllers
 
         public int BadMethod(TestClass testClass)
         {
+            var num1 = 1;
+
+            while(num1 < 3)
+            {
+                Console.WriteLine("Test");
+            }
+
             return testClass.TestProperty;
         }
     }
