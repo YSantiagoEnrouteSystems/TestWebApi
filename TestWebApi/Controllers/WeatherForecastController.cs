@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using TestWebApi.Models;
 
 namespace TestWebApi.Controllers
 {
@@ -38,9 +39,23 @@ namespace TestWebApi.Controllers
             .ToArray();
         }
 
-        public void BadMethod()
+        public int TestMethod()
         {
+            TestClass testClass = null;
 
+            return BadMethod(testClass);
+        }
+
+        public int BadMethod(TestClass testClass)
+        {
+            var num1 = 1;
+
+            while(num1 < 3)
+            {
+                Console.WriteLine("Test");
+            }
+
+            return testClass.TestProperty;
         }
     }
 }
