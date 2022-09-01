@@ -3,7 +3,6 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace TestWebApi.Controllers
 {
@@ -27,6 +26,9 @@ namespace TestWebApi.Controllers
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
+
+            rng.Next();
+
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
@@ -34,6 +36,11 @@ namespace TestWebApi.Controllers
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        public void BadMethod()
+        {
+
         }
     }
 }
